@@ -2,7 +2,9 @@ import logging
 from telegram.ext import Updater
 from telegram.ext import MessageHandler, Filters, CommandHandler
 
-updater = Updater(token='', use_context=True)
+with open('../bot_token') as f:
+    token = f.readline()
+updater = Updater(token=token, use_context=True)
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.DEBUG)
